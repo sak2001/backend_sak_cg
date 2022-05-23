@@ -9,7 +9,7 @@ const PORT = 3000;
 
 app.use(bodyParser.json({ limit: "30mb", extended: true }));
 app.use(bodyParser.urlencoded({ limit: "30mb", extended: true }));
-app.use(cors());
+// app.use(cors());
 
 // const rootPath = path.resolve("./dist");
 // app.use(express.static(rootPath));

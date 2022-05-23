@@ -8,12 +8,12 @@ module.exports = async () => {
 
   //relations betwen tables
 
-  const role = await role
+  const role_ = await role
     .create({ username: "deault", password: "123456789" })
     .catch(errHandler);
-  const admin = await admin.create();
-  const moderator = await moderator.create();
-  const campaign_creator = await campaign_creator.create();
+  const admin_ = await admin.create();
+  const moderator_ = await moderator.create();
+  const campaign_creator_ = await campaign_creator.create();
 
   //ferch details from databases
 };
