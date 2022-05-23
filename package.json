@@ -1,9 +1,9 @@
 {
   "name": "backend-apis",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Saksham",
@@ -18,5 +18,15 @@
     "mysql": "^2.18.1",
     "mysql2": "^2.3.3",
     "sequelize": "^6.19.2"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sak2001/backend_sak_cg.git"
+  },
+  "bugs": {
+    "url": "https://github.com/sak2001/backend_sak_cg/issues"
+  },
+  "homepage": "https://github.com/sak2001/backend_sak_cg#readme",
+  "description": ""
 }

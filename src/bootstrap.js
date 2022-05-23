@@ -1,6 +1,8 @@
+const campaign_creator = require("../models/campaign_creator");
+
 module.exports = async () => {
   const admin = require("../models/admin");
-  const user = require("../models/campaign_creator");
+  const campaign_creator = require("../models/campaign_creator");
   const moderator = require("../models/moderator");
   const role = require("../models/admin");
 
@@ -11,7 +13,7 @@ module.exports = async () => {
     .catch(errHandler);
   const admin = await admin.create();
   const moderator = await moderator.create();
-  const user = await moderator.create();
+  const campaign_creator = await campaign_creator.create();
 
   //ferch details from databases
 };
