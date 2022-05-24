@@ -1,8 +1,7 @@
+import role from "../models/role.js";
+const connection = require("./src/database/connection");
 
-const role = require("./models/role");
-const connection = require("./src/database/connection")
-
-export const registration_api = async(request, response) => {
+export const registration_api = async (request, response) => {
   return role
     .create({
       UserID: "1234",
@@ -20,21 +19,17 @@ export const registration_api = async(request, response) => {
     });
 };
 
-
-export const login = async(request, result) => {
-    // const FullName =  request.body.FullName;
-    const role =  request.body.role;
-    const email =  request.body.email;
-    // const password =  request.body.password;
-    connection.query(
-    `SELECT * FROM users where email == ${email}`,
+export const login = async (request, result) => {
+  const email = request.body.email;
+  const password = request.body.password;
+  connection.query(
+    `SELECT * FROM users where email == ${email} and password == ${password}`,
     function (err, res) {
       if (err) {
         request.flash("error", err);
         result.status(403).render();
-      } 
-      else {
-        res.render("list", { role : role });
+      } else {
+        res.render("list", { role: res.role });
       }
     }
   );

@@ -1,6 +1,6 @@
 const sequelize = require("sequelize");
 
-module.exports = sequelize.define("users", {
+const role = sequelize.define("users", {
   UserID: {
     type: sequelize.INTEGER(11),
     allowNull: false,
@@ -25,3 +25,5 @@ module.exports = sequelize.define("users", {
     allowNull: false,
   },
 });
+
+export default role;

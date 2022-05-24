@@ -2,10 +2,11 @@ const express = require("express");
 const path = require("path");
 const bodyParser = require("body-parser");
 const res = require("express/lib/response");
+import postRoutes from "./routes/post.js";
 
 let app = express();
 
-const PORT = 3000;
+const port = process.env.PORT || 3000;
 
 app.use(bodyParser.json({ limit: "30mb", extended: true }));
 app.use(bodyParser.urlencoded({ limit: "30mb", extended: true }));
@@ -17,7 +18,7 @@ app.use(bodyParser.urlencoded({ limit: "30mb", extended: true }));
 require("./src/database/connection");
 require("./src/bootstrap")();
 
-app.use("./routes/post");
+app.use("/", postRoutes);
 
 // router.use((err,req,res,next)=>{
 //   if(err){
@@ -26,7 +27,7 @@ app.use("./routes/post");
 //   }
 // });
 
-app.listen(PORT, (err) => {
+app.listen(port, (err) => {
   if (err) return console.log(`cannot listen on port: ${PORT}`);
   console.log(`server is listening on : http://localhost:${PORT}/`);
 });
