@@ -17,7 +17,7 @@ app.use(bodyParser.urlencoded({ limit: "30mb", extended: true }));
 require("./src/database/connection");
 require("./src/bootstrap")();
 
-app.use("./router/post");
+app.use("./routes/post");
 
 // router.use((err,req,res,next)=>{
 //   if(err){
